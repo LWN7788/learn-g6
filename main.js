@@ -11,7 +11,7 @@ const data = {
       "shape": "customNode",
       "id": "node2",
       "x": 350,
-      "y": 300
+      "y": 200
     }
   ],
 };
