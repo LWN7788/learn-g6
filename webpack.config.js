@@ -6,7 +6,7 @@ const webpack=require('webpack')
 const isDev=process.env.NODE_ENV==='development';
 const config={
 	entry:{
-		main:path.join(__dirname,'main.js'),
+		main:path.join(__dirname,'src/main.js'),
 	},
 	output:{
 		filename:'js/[name].js',
@@ -15,11 +15,13 @@ const config={
 	module:{
 		rules:[
 			{
-				test:/\.jsx$/,
+				test:/\.js$/,
+				exclude: path.join(__dirname,'node_modules'),
+				include:path.join(__dirname,'src'),
 				use:{
 					loader:'babel-loader',
 					options:{
-						presets:['env']
+						presets:['env','stage-3']
 					}
 				}
 			}
